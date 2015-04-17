@@ -74,11 +74,14 @@ if (cordova.platformId == "browser") {
             //if (permissions && permissions.length > 0) {
             //    permissionObj.scope = permissions.toString();
             //}
-            
+            console.log('options', options);
             FB.login(function (response) {
                 if (response.authResponse) {
+                    console.log('response.authResponse', response.authResponse);
+                    console.log('response', response);
                     s(response);
                 } else {
+                    console.log('response.status', response.status);
                     f(response.status);
                 }
             }, options);
